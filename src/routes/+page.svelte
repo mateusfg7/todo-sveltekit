@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TodoItem from './TodoItem.svelte';
+	import TodoItem from '$lib/components/TodoItem.svelte';
 
 	let todos: Todo[] = [
 		{ completed: false, content: 'Do something', id: 'kja90jda' },
