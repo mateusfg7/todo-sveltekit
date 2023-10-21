@@ -20,13 +20,23 @@
 		todos = [...todos, newTodo];
 		currentTodoContent = '';
 	}
+
+	function removeTodo(id: string) {
+		todos = todos.filter((todo) => todo.id !== id);
+	}
+
+	function handleKeyPress(e: KeyboardEvent) {
+		if (e.key !== 'Enter') return;
+
+		addTodo();
+	}
 </script>
 
 <div class="flex justify-center w-screen h-screen">
 	<main class="flex flex-col justify-end py-10 w-96">
 		<div class="flex-1 w-full">
 			{#each todos as todo (todo.id)}
-				<TodoItem {todo} />
+				<TodoItem {todo} {removeTodo} />
 			{/each}
 		</div>
 		<div class="flex items-stretch w-full gap-2">
@@ -43,6 +53,8 @@
 		</div>
 	</main>
 </div>
+
+<svelte:window on:keypress={handleKeyPress} />
 
 <style lang="postcss">
 </style>
