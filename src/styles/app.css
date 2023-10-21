@@ -4,6 +4,6 @@
 
 @layer base {
 	body {
-		background: #1a1a1a;
+		@apply bg-background text-white text-lg;
 	}
 }
