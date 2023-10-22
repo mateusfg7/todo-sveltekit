@@ -17,7 +17,7 @@
 		<p
 			data-is-completed={todo.completed}
 			title={todo.content}
-			class="data-[is-completed='true']:line-through text-ellipsis w-full overflow-hidden text-lg leading-none cursor-pointer data-[is-completed='true']:opacity-50"
+			class="data-[is-completed='true']:line-through text-ellipsis w-full overflow-hidden text-lg leading-tight cursor-pointer data-[is-completed='true']:opacity-50"
 		>
 			{todo.content}
 		</p>
