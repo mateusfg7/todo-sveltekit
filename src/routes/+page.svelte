@@ -1,10 +1,7 @@
 <script lang="ts">
 	import TodoItem from '$lib/components/TodoItem.svelte';
 
-	let todos: Todo[] = [
-		{ completed: false, content: 'Do something', id: 'kja90jda' },
-		{ completed: false, content: 'Do another thing', id: 'dasd33q' }
-	];
+	let todos: Todo[] = [];
 
 	let currentTodoContent = '';
 
@@ -19,6 +16,8 @@
 
 		todos = [...todos, newTodo];
 		currentTodoContent = '';
+
+		window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
 	}
 
 	function removeTodo(id: string) {
@@ -32,26 +31,24 @@
 	}
 </script>
 
-<div class="flex justify-center w-screen h-screen">
-	<main class="flex flex-col justify-end py-10 w-96">
-		<div class="flex-1 w-full">
-			{#each todos as todo (todo.id)}
-				<TodoItem {todo} {removeTodo} />
-			{/each}
-		</div>
-		<div class="flex items-stretch w-full gap-2">
-			<input
-				class="flex-1 p-2 leading-none text-white border border-transparent bg-foreground focus:ring-accent focus:border-accent"
-				type="text"
-				placeholder="Do something..."
-				bind:value={currentTodoContent}
-			/>
-			<button
-				class="px-4 py-2 text-xl leading-none cursor-pointer bg-foreground hover:bg-accent active:bg-accent/80"
-				on:click={addTodo}>+</button
-			>
-		</div>
-	</main>
+<div class="flex justify-center w-screen">
+	<div class="relative pt-5 pb-32 w-[26rem]">
+		{#each todos as todo (todo.id)}
+			<TodoItem {todo} {removeTodo} />
+		{/each}
+	</div>
+	<div class="fixed flex items-stretch gap-2 w-[26rem] bottom-8">
+		<input
+			class="flex-1 p-2 leading-none text-white border border-transparent bg-foreground focus:ring-accent focus:border-accent"
+			type="text"
+			placeholder="Do something..."
+			bind:value={currentTodoContent}
+		/>
+		<button
+			class="px-4 py-2 text-xl leading-none cursor-pointer bg-foreground hover:bg-accent active:bg-accent/80 focus:ring-accent focus:border-accent"
+			on:click={addTodo}>+</button
+		>
+	</div>
 </div>
 
 <svelte:window on:keypress={handleKeyPress} />
