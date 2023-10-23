@@ -22,7 +22,7 @@
 			{todo.content}
 		</p>
 	</label>
-	<button class="text-neutral-600/30 hover:text-red-600" on:click={() => removeTodo(todo.id)}>
+	<button class="text-neutral-600/10 hover:text-red-600" on:click={() => removeTodo(todo.id)}>
 		<Trash size={25} weight="duotone" />
 	</button>
 </div>
