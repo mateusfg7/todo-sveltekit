@@ -34,6 +34,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>To-do on SvelteKit</title>
+</svelte:head>
+
 <div class="flex justify-center w-screen">
 	<div class="relative pt-5 pb-32 w-[26rem]">
 		{#each todos as todo (todo.id)}
@@ -60,6 +64,3 @@
 </div>
 
 <svelte:window on:keypress={handleKeyPress} />
-
-<style lang="postcss">
-</style>
