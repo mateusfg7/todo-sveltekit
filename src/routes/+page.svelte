@@ -1,9 +1,12 @@
 <script lang="ts">
 	import TodoItem from '$lib/components/TodoItem.svelte';
+	import ProgressCircle from '$lib/components/ProgressCircle.svelte';
 
 	let todos: Todo[] = [];
-
 	let currentTodoContent = '';
+
+	$: completed = todos.filter((todo) => todo.completed).length;
+	$: total = todos.length;
 
 	function addTodo() {
 		if (currentTodoContent.length < 3) return;
@@ -34,20 +37,25 @@
 <div class="flex justify-center w-screen">
 	<div class="relative pt-5 pb-32 w-[26rem]">
 		{#each todos as todo (todo.id)}
-			<TodoItem {todo} {removeTodo} />
+			<TodoItem bind:todo {removeTodo} />
 		{/each}
 	</div>
-	<div class="fixed flex items-stretch gap-2 w-[26rem] bottom-8">
-		<input
-			class="flex-1 p-2 leading-none text-white border border-transparent bg-foreground focus:ring-accent focus:border-accent"
-			type="text"
-			placeholder="Do something..."
-			bind:value={currentTodoContent}
-		/>
-		<button
-			class="px-4 py-2 text-xl leading-none cursor-pointer bg-foreground hover:bg-accent active:bg-accent/80 focus:ring-accent focus:border-accent"
-			on:click={addTodo}>+</button
-		>
+	<div class="fixed w-[26rem] bottom-8">
+		<div class="relative flex items-stretch w-full gap-2">
+			<div class="absolute -translate-x-[115%] -translate-y-1/2 top-1/2">
+				<ProgressCircle bind:completed bind:total />
+			</div>
+			<input
+				class="flex-1 p-2 leading-none text-white border border-transparent bg-foreground focus:ring-accent focus:border-accent"
+				type="text"
+				placeholder="Do something..."
+				bind:value={currentTodoContent}
+			/>
+			<button
+				class="px-4 py-2 text-xl leading-none cursor-pointer bg-foreground hover:bg-accent active:bg-accent/80 focus:ring-accent focus:border-accent"
+				on:click={addTodo}>+</button
+			>
+		</div>
 	</div>
 </div>
 
