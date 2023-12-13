@@ -1,8 +1,11 @@
 <script lang="ts">
 	import Trash from 'phosphor-svelte/lib/Trash';
 
-	export let todo: Todo;
-	export let removeTodo: (id: string) => void;
+	type Props = {
+		todo: Todo;
+		removeTodo: (id: string) => void;
+	};
+	let { todo, removeTodo } = $props<Props>();
 </script>
 
 <div class="flex items-center justify-between w-full gap-2">
