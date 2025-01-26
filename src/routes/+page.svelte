@@ -39,7 +39,7 @@
 <div class="flex justify-center w-screen">
 	<div class="relative pt-5 pb-32 w-[26rem]">
 		{#each todos as todo (todo.id)}
-			<TodoItem bind:todo {removeTodo} />
+			<TodoItem {todo} {removeTodo} />
 		{/each}
 	</div>
 	<div class="fixed w-[26rem] bottom-8">
@@ -61,4 +61,4 @@
 	</div>
 </div>
 
-<svelte:window on:keypress={handleKeyPress} />
+<svelte:window onkeypress={handleKeyPress} />

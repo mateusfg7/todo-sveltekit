@@ -5,7 +5,7 @@
 		todo: Todo;
 		removeTodo: (id: string) => void;
 	};
-	let { todo, removeTodo } = $props<Props>();
+	let { todo, removeTodo }: Props = $props();
 </script>
 
 <div class="flex items-center justify-between w-full gap-2">
@@ -25,7 +25,7 @@
 			{todo.content}
 		</p>
 	</label>
-	<button class="text-neutral-600/10 hover:text-red-600" on:click={() => removeTodo(todo.id)}>
+	<button class="text-neutral-600/10 hover:text-red-600" onclick={() => removeTodo(todo.id)}>
 		<Trash size={25} weight="duotone" />
 	</button>
 </div>

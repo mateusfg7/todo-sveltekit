@@ -1,17 +1,21 @@
 <script lang="ts">
-	export let total: number;
-	export let completed: number;
+	interface Props {
+		total: number;
+		completed: number;
+	}
 
-	$: progress = completed / total || 0;
+	let { total, completed }: Props = $props();
 
-	$: angle = 360 * progress;
+	let progress = $derived(completed / total || 0);
+
+	let angle = $derived(360 * progress);
 
 	// Adapt the logic according to the approach
-	$: background = `radial-gradient(#1a1a1a 50%, transparent 50.5%),
-    conic-gradient(#FF3E00 0deg ${angle}deg, #2E2E2E ${angle}deg 360deg);`;
+	let background = $derived(`radial-gradient(#1a1a1a 50%, transparent 50.5%),
+    conic-gradient(#FF3E00 0deg ${angle}deg, #2E2E2E ${angle}deg 360deg);`);
 	//
 
-	$: cssVarStyles = `--background:${background}`;
+	let cssVarStyles = $derived(`--background:${background}`);
 </script>
 
 <div
