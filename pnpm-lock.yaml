@@ -43,8 +43,8 @@ importers:
         specifier: ^2.45.1
         version: 2.46.1(eslint@9.19.0(jiti@2.4.2))(svelte@5.19.3)
       phosphor-svelte:
-        specifier: ^1.3.0
-        version: 1.5.0(svelte@5.19.3)
+        specifier: ^3.0.0
+        version: 3.0.1(svelte@5.19.3)(vite@5.4.14(lightningcss@1.29.1))
       prettier:
         specifier: ^3.1.0
         version: 3.4.2
@@ -1206,10 +1206,14 @@ packages:
   pathval@1.1.1:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
 
-  phosphor-svelte@1.5.0:
-    resolution: {integrity: sha512-fXn6kTDsj+iixGJ8hMRkeEnflq8YB6rToQpMCevYZvEMWKgxLIEr7nDOFoe1ufk+sw31rWr03ATFb9KXIVYICQ==}
+  phosphor-svelte@3.0.1:
+    resolution: {integrity: sha512-QuxdzWCBjNZXglk4XpmaKb+JRA6XgKOYWpBY8k82NZwxO5ec7u2iFuueAijKYgj/7hLWHtreAPc2Q5uZFNTRSQ==}
     peerDependencies:
-      svelte: '>=3'
+      svelte: ^5.0.0 || ^5.0.0-next.96
+      vite: '>=5'
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -2579,9 +2583,13 @@ snapshots:
 
   pathval@1.1.1: {}
 
-  phosphor-svelte@1.5.0(svelte@5.19.3):
+  phosphor-svelte@3.0.1(svelte@5.19.3)(vite@5.4.14(lightningcss@1.29.1)):
     dependencies:
+      estree-walker: 3.0.3
+      magic-string: 0.30.17
       svelte: 5.19.3
+    optionalDependencies:
+      vite: 5.4.14(lightningcss@1.29.1)
 
   picocolors@1.1.1: {}
 
