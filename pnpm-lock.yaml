@@ -37,7 +37,7 @@ devDependencies:
     version: 2.34.0(eslint@8.52.0)(svelte@5.0.0-next.22)
   phosphor-svelte:
     specifier: ^1.3.0
-    version: 1.3.0(svelte@5.0.0-next.22)
+    version: 1.5.0(svelte@5.0.0-next.22)
   postcss:
     specifier: ^8.4.31
     version: 8.4.31
@@ -2172,8 +2172,8 @@ packages:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
     dev: true
 
-  /phosphor-svelte@1.3.0(svelte@5.0.0-next.22):
-    resolution: {integrity: sha512-aW6/O2+j3TCA8oku8CwkMUvy00OHUa5CqpeqBr/Y9nT8wT/eTKZIBGt2G+JJddEHs0KkSBr7oIYdJUsUJY80fQ==}
+  /phosphor-svelte@1.5.0(svelte@5.0.0-next.22):
+    resolution: {integrity: sha512-fXn6kTDsj+iixGJ8hMRkeEnflq8YB6rToQpMCevYZvEMWKgxLIEr7nDOFoe1ufk+sw31rWr03ATFb9KXIVYICQ==}
     peerDependencies:
       svelte: '>=3'
     dependencies:
