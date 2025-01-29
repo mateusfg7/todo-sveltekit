@@ -26,7 +26,7 @@ importers:
         version: 5.0.3(svelte@5.19.4)(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1))
       '@tailwindcss/forms':
         specifier: ^0.5.6
-        version: 0.5.10(tailwindcss@4.0.0)
+        version: 0.5.10(tailwindcss@4.0.1)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.0.0
         version: 8.22.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3)
@@ -59,7 +59,7 @@ importers:
         version: 4.1.4(svelte@5.19.4)(typescript@5.7.3)
       tailwindcss:
         specifier: ^4.0.0
-        version: 4.0.0
+        version: 4.0.1
       tslib:
         specifier: ^2.4.1
         version: 2.8.1
@@ -1304,6 +1304,9 @@ packages:
   tailwindcss@4.0.0:
     resolution: {integrity: sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ==}
 
+  tailwindcss@4.0.1:
+    resolution: {integrity: sha512-UK5Biiit/e+r3i0O223bisoS5+y7ZT1PM8Ojn0MxRHzXN1VPZ2KY6Lo6fhu1dOfCfyUAlK7Lt6wSxowRabATBw==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -1737,10 +1740,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tailwindcss/forms@0.5.10(tailwindcss@4.0.0)':
+  '@tailwindcss/forms@0.5.10(tailwindcss@4.0.1)':
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 4.0.0
+      tailwindcss: 4.0.1
 
   '@tailwindcss/node@4.0.0':
     dependencies:
@@ -2580,6 +2583,8 @@ snapshots:
       zimmerframe: 1.1.2
 
   tailwindcss@4.0.0: {}
+
+  tailwindcss@4.0.1: {}
 
   tapable@2.2.1: {}
 
